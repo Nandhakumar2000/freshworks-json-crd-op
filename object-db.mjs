@@ -6,8 +6,8 @@ export class db {
     }
 
     /**
-     * @param {string} path If path is given in Argument
-     * @param {undefined} path If path is not given in Argument
+     * @param {string} path If path is given as an Argument
+     * @param {undefined} path If path is not given as Argument
      */
     async start(path) {
         return new Promise(async (resolved, rejected) => {
@@ -175,7 +175,7 @@ export class db {
         console.log('------Deleting--------')
         console.log('Key-', key)
         return new Promise(async (resolved, rejected) => {
-            //Checking key exists in DB
+            //Checking if key exists in DB
             if (!Object.keys(this.data).includes(key)) {
                 console.log('Key does not exists')
                 console.log('---------------------\n')
@@ -183,7 +183,7 @@ export class db {
             } else {
                 delete this.data[key]
                 const deletePromise = new Promise(async (resolve, reject) => {
-                    //Wring into DB
+                    //Wring data into DB
                     await fs.writeFileSync(this.dbPath, JSON.stringify(this.data), function (err) {
                         if (err) {
                             console.log(err)

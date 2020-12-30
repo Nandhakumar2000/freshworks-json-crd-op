@@ -3,9 +3,9 @@ import {
 } from './object-db.mjs';
 
 
-//Creating DB instance
+//Creating DB Instance
 let dataStore = new db()
-// Starting Db
+// Starting DB
 const startPromise = new Promise(async (resolve, reject) => {
     await dataStore.start(process.argv[2])
         .then((resp) => {
@@ -16,46 +16,45 @@ const startPromise = new Promise(async (resolve, reject) => {
         })
 });
 
-//Sample Create files
+//Create fields
 let sample_create = {
     "1": {
-        name: 'A'
+        title: 'A'
     },
     "2": {
-        name: 'B'
+        title: 'B'
     },
     "3": {
-        name: 'C'
+        title: 'C'
     },
     "4": {
-        name: 'D'
+        title: 'D'
     },
+    "5": {
+        title: 'E'
+    }
 }
 
-//Sample Read Keys
+//Read Keys
 let sample_read = ['1', '2', '3', '4', '5']
 
-//Sample Delete keys
-let sample_delete = ['1', '2', '5']
+// Delete keys
+let sample_delete = ['1', '3', '5']
 
-//After starting DB Doing CRD Operations
+//Starting CRD OP
 startPromise.then(async (res) => {
 
-    //Create operation
-    for (let each in sample_create) {
-        dataStore.create(each, sample_create[each]).then((res) => {}).catch((error) => {})
+    for (let each in sample_create) {  
+        dataStore.create(each, sample_create[each]).then((res) => {}).catch((error) => {})       //---CREATE---
     }
-    //Reading after inserting
     for (let each in sample_read) {
-        dataStore.read(sample_read[each]).then((res) => {}).catch((error) => {})
+        dataStore.read(sample_read[each]).then((res) => {}).catch((error) => {})                 //---READ---
     }
-    //Deleting Some values
     for (let each in sample_delete) {
-        dataStore.delete(sample_delete[each]).then((res) => {}).catch((error) => {})
-    }
-    //Reading after deleting some Value
+        dataStore.delete(sample_delete[each]).then((res) => {}).catch((error) => {})             //---DELETE---
+    } 
     for (let each in sample_read) {
-        dataStore.read(sample_read[each]).then((res) => {}).catch((error) => {})
+        dataStore.read(sample_read[each]).then((res) => {}).catch((error) => {})                 //---READ after DELETE---
     }
 
 })
