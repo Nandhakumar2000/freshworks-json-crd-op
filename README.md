@@ -30,7 +30,7 @@ Source: https://nodejs.org/download/release/v14.15.3/
 (or)
 
 Run on Custom Path 
-> node index.js <Your Path>
+> node index.js --Your Path-- <br />
   eg: node index.js /Users/nandhakumar/Desktop
   
 ## Given Solution
