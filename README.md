@@ -21,8 +21,8 @@ Source: https://nodejs.org/download/release/v14.15.3/
 
 1 - Check Node Version
 
-node -v
-14.15.3
+> node -v
+> 14.15.3
 
 2-Run on Default Path 
 > node index.js
@@ -30,7 +30,7 @@ node -v
 (or)
 
 Run on Custom Path 
-node index.js <Your Path>
+> node index.js <Your Path>
   eg: node index.js /Users/nandhakumar/Desktop
   
 ## Given Solution
