@@ -22,7 +22,7 @@ let sample_create = {
         name: 'A'
     },
     "2": {
-        name: ',B'
+        name: 'B'
     },
     "3": {
         name: 'C'
