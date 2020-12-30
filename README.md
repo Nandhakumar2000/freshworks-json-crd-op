@@ -10,7 +10,7 @@ Macintosh & Linux
 ## System Requirements
 > node 14.15.3 (Very Important)
 
-or any other version which is greater than 14.15.0
+or any other version which is greater than 14.15.0 <br />
 Source: https://nodejs.org/download/release/v14.15.3/
 
 
